@@ -20,10 +20,10 @@ class Game extends Component{
         super();
         this.state = {
           player: {
-            shields: 1500       
+            shields: 600    
           },
           enemy: {
-            shields: 3000
+            shields: 500 
           },
           isAttacking: false,
           isShowing: false,
@@ -32,6 +32,11 @@ class Game extends Component{
         
         fireExploding:true,
         DuncanHeadShowing:true,
+        battleBackgroundShowing:true,
+
+
+
+        
         // headMasterEntering:false,
         // duncanIdahoEntering:false,
         // beastEntering:false,
@@ -40,7 +45,7 @@ class Game extends Component{
         // assassinEntering:false,
         // userAvatarEntering:false,
         
-        battleBackgroundShowing:false,
+   
         // battleMenuShowing:true,
         // blueBackgroundShowing:false,
         // redBackgroundShowing:false,
@@ -70,104 +75,125 @@ class Game extends Component{
         // arrowButtonsHidden:false,
 
       }
+        //----HAVENT TRIED THIS YET!- JR3 from Ex2.............
+  const logMessage = message => {
+    message = message || "Hello World!";
+    console.log(message);
+  };
+  
+  logMessage();
+  
+  // 2. Update the code below to set `message` using a ternary expression (variable = conditional ? value : otherValue)
+  
+  const logTired = beenWorkingAllDay => {
+    const message = beenWorkingAllDay ? "I'm feeling really tired" : "I'm wide awake!";
+    console.log(message);
+  };
+  
+  logTired(true);
+   //----HAVENT TRIED THIS YET!- JR3 ^^^^
+
+
+
+
       };
     
-      // normalAttack = () => {
-      //   this.setState({enemy: {shields: this.state.enemy.shields}});
-      //   console.log("normal attack");
-      //   console.log(this.state.enemy.shields);
-      //   let newEnemyShields = this.state.enemy.shields - 300;
-      //   console.log(`enemy health ${newEnemyShields}`);
-      //   this.setState({enemy: {shields: newEnemyShields}});
-      //   this.setState({isAttacking:true});    
-      //   this.enemyAttack();
-      //   this.deathCheckEnemy();
-      //   this.deathCheckPlayer();
-      //   setTimeout(() =>{this.setState({isAttacking:false})}, 550);
-      // }
+      normalAttack = () => {
+        this.setState({enemy: {shields: this.state.enemy.shields}});
+        console.log("normal attack");
+        console.log(this.state.enemy.shields);
+        let newEnemyShields = this.state.enemy.shields - 300;
+        console.log(`enemy health ${newEnemyShields}`);
+        this.setState({enemy: {shields: newEnemyShields}});
+        this.setState({isAttacking:true});    
+        this.enemyAttack();
+        this.deathCheckEnemy();
+        this.deathCheckPlayer();
+        setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+      }
     
-      // enemyAttack = () => {
-      //   this.setState({player: {shields: this.state.player.shields}});
-      //   let roll = Math.floor(Math.random() * 12) + 1;
-      //   console.log(`this is beast's roll ${roll}`);
-      //   if ( roll === 6) {
-      //     let newPlayerShields = this.state.player.shields - this.state.player.shields;
-      //     this.setState({player: {shields: newPlayerShields}});
-      //   }
-      //   else {
-      //     let newPlayerShields = this.state.player.shields - 300;
-      //     this.setState({player: {shields: newPlayerShields}});
-      //   }
-      // };
+      enemyAttack = () => {
+        this.setState({player: {shields: this.state.player.shields}});
+        let roll = Math.floor(Math.random() * 12) + 1;
+        console.log(`this is beast's roll ${roll}`);
+        if ( roll === 6) {
+          let newPlayerShields = this.state.player.shields - this.state.player.shields;
+          this.setState({player: {shields: newPlayerShields}});
+        }
+        else {
+          let newPlayerShields = this.state.player.shields - 300;
+          this.setState({player: {shields: newPlayerShields}});
+        }
+      };
       
-      // pulseAttack = () => {
-      //   this.setState({enemy: {shields: this.state.enemy.shields}});
-      //   console.log("pulse attack");
-      //   console.log(this.state.enemy.shields);
-      //   let roll = Math.floor(Math.random() * 6) + 1;
-      //   console.log(`this is the roll ${roll}`);
-      //   if (roll === 1 || roll === 4) {
-      //     let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
-      //     console.log(`damage dealt ${damageDealt}`);
-      //     let newEnemyShields = this.state.enemy.shields - damageDealt;
-      //     console.log(`new enemy shields ${newEnemyShields}`);
-      //     this.setState({enemy: {shields: newEnemyShields}});
-      //   }
-      //   else if (roll === 2 || roll === 5) {
-      //     let damageDealt = (40/100) * this.state.enemy.shields;
-      //     console.log(`damage dealt ${damageDealt}`);
-      //     let newEnemyShields = this.state.enemy.shields - damageDealt;
-      //     console.log(`new enemy shields ${newEnemyShields}`);
-      //     this.setState({enemy: {shields: newEnemyShields}});
-      //   }
-      //   else if (roll === 3 || roll === 6) {
-      //     let damageDealt = 0;
-      //     console.log(`damage dealt ${damageDealt}`);
-      //     let newEnemyShields = this.state.enemy.shields - damageDealt;
-      //     console.log(`new enemy shields ${newEnemyShields}`);
-      //     this.setState({enemy: {shields: newEnemyShields}});
-      //   }
-      //   this.enemyPulseAttack();
-      //   this.deathCheckEnemy();
-      //   this.deathCheckPlayer();  
+      pulseAttack = () => {
+        this.setState({enemy: {shields: this.state.enemy.shields}});
+        console.log("pulse attack");
+        console.log(this.state.enemy.shields);
+        let roll = Math.floor(Math.random() * 6) + 1;
+        console.log(`this is the roll ${roll}`);
+        if (roll === 1 || roll === 4) {
+          let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
+          console.log(`damage dealt ${damageDealt}`);
+          let newEnemyShields = this.state.enemy.shields - damageDealt;
+          console.log(`new enemy shields ${newEnemyShields}`);
+          this.setState({enemy: {shields: newEnemyShields}});
+        }
+        else if (roll === 2 || roll === 5) {
+          let damageDealt = (40/100) * this.state.enemy.shields;
+          console.log(`damage dealt ${damageDealt}`);
+          let newEnemyShields = this.state.enemy.shields - damageDealt;
+          console.log(`new enemy shields ${newEnemyShields}`);
+          this.setState({enemy: {shields: newEnemyShields}});
+        }
+        else if (roll === 3 || roll === 6) {
+          let damageDealt = 0;
+          console.log(`damage dealt ${damageDealt}`);
+          let newEnemyShields = this.state.enemy.shields - damageDealt;
+          console.log(`new enemy shields ${newEnemyShields}`);
+          this.setState({enemy: {shields: newEnemyShields}});
+        }
+        this.enemyPulseAttack();
+        this.deathCheckEnemy();
+        this.deathCheckPlayer();  
     
-      // }
+      }
     
-      // enemyPulseAttack = () => {
-      //   this.setState({player: {shields: this.state.player.shields}});
-      //   let pulseAttackCost = Math.floor(this.state.player.shields/10);
-      //   let damageDealt = pulseAttackCost + 300;
-      //   this.setState({player: {shields: this.state.player.shields}});
-      //   let roll = Math.floor(Math.random() * 12) + 1;
-      //   console.log(`this is beast's roll ${roll}`);
-      //   if ( roll === 6) {
-      //     let newPlayerShields = this.state.player.shields - this.state.player.shields;
-      //     this.setState({player: {shields: newPlayerShields}});
-      //   }
-      //   else {
-      //     let newPlayerShields = this.state.player.shields - damageDealt;
-      //     this.setState({player: {shields: newPlayerShields}});
-      //   }
-      // }
+      enemyPulseAttack = () => {
+        this.setState({player: {shields: this.state.player.shields}});
+        let pulseAttackCost = Math.floor(this.state.player.shields/10);
+        let damageDealt = pulseAttackCost + 300;
+        this.setState({player: {shields: this.state.player.shields}});
+        let roll = Math.floor(Math.random() * 12) + 1;
+        console.log(`this is beast's roll ${roll}`);
+        if ( roll === 6) {
+          let newPlayerShields = this.state.player.shields - this.state.player.shields;
+          this.setState({player: {shields: newPlayerShields}});
+        }
+        else {
+          let newPlayerShields = this.state.player.shields - damageDealt;
+          this.setState({player: {shields: newPlayerShields}});
+        }
+      }
     
-      // deathCheckPlayer = () => {
-      //   let vida = this.state.player.shields; 
-      //   if ( vida === 0 || vida < 0) {
-      //     console.log("duncan is dead");
-      //     alert(`Duncan is dead, but in death he finds the power of coding magic.`);
-      //     let newPlayerShields = 1000000000000000;
-      //     this.setState({player: {shields: newPlayerShields}});
-      //   }
-      // };
-      // deathCheckEnemy = () => {
-      //   if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
-      //     console.log(`enemy is dead`);
-      //     let newMessage = "Beast is dead";
-      //     this.setState({isShowing: true});
-      //     this.setState({message: newMessage});
-      //     this.setState({link: "/thankyou"});
-      //   }
-      // };
+      deathCheckPlayer = () => {
+        let vida = this.state.player.shields; 
+        if ( vida === 0 || vida < 0) {
+          console.log("duncan is dead");
+          alert(`Duncan is dead`);
+          // let newPlayerShields = 1000000000000000;
+          // this.setState({player: {shields: newPlayerShields}});
+        }
+      };
+      deathCheckEnemy = () => {
+        if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
+          console.log(`enemy is dead`);
+          let newMessage = "Beast is dead";
+          this.setState({isShowing: true});
+          this.setState({message: newMessage});
+          this.setState({link: "/thankyou"});
+        }
+      };
     
       render() {
         return (
@@ -177,7 +203,7 @@ class Game extends Component{
               
               <img src={require("../../Assets/background_battleScreen.jpg")} alt= "BattleBackground "width="100%"
                 style={{ position:"fixed", zIndex:-100}}
-                className={this.props.battleBackgroundShowing ? "battleBackgroundShowing": "battleBackgroundHidden"}
+                className={this.state.battleBackgroundShowing ? "battleBackgroundShowing": "battleBackgroundHidden"}
                   />
            
            <div style={{width:"100%"}}>
@@ -186,10 +212,12 @@ class Game extends Component{
               <Row className="FightScreen" 
                 style={{width: "100%", minheight:"75%", zIndex:1, position:"relative"}}
                 >
-
-                  <Story
+                  <LevelOne
+                      // battleBackgroundShowing={this.state.battleBackgroundShowing}
+                      />
+                  {/* <Story
                     DuncanHeadShowing={this.DuncanHeadShowing}/>
-              
+               */}
                 </Row>
                 <Row style={{width:"100%"}}>
               
