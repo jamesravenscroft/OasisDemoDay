@@ -6,15 +6,13 @@ class Story extends Component {
     constructor() {
         super();
         this.state = {
-   
           isAttacking: false,
           isShowing: false,
           message: "",
           link: "",
         DuncanHeadShowing:false,
         battleBackgroundShowing:false,
-        battleMenuShowing:false
-
+        // battleMenuShowing:false
       }};
     // DuncanHead = () => {
     // //timeline 00:00 initial slide in animation
@@ -36,8 +34,7 @@ class Story extends Component {
     return (
         <div style={{position:"fixed", zIndex:10}}
             >   <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
-                <div>
-        
+                <div>      
             <img src={require("../../Assets/duncanHead.gif")} alt="DuncanHead"
                 style={{height:"100%", position:"fixed", zIndex:-50}}
                 // className={this.props.DuncanHeadShowing ? "DuncanHeadShowing" : "DuncanHeadHidden"}
