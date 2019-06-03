@@ -10,8 +10,7 @@ import { Container, Row, Col } from "./components/Grid";
 import {Animated} from "react-animated-css";
 import SardaukarElite from "../src/components/SardaukarElite";
 
-class LevelOne extends React.Component {
-    
+class LevelOne extends React.Component {  
   constructor() {
     super();
     this.state = {
@@ -38,7 +37,6 @@ class LevelOne extends React.Component {
     // assassinEntering:false,
     // userAvatarEntering:false,
     
-
     // battleMenuShowing:true,
     // blueBackgroundShowing:false,
     // redBackgroundShowing:false,
@@ -69,11 +67,9 @@ class LevelOne extends React.Component {
 
   }
 
-
-
   };
   normalAttack = () => {
-    
+
     console.log("normal attack");
     console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
@@ -131,10 +127,7 @@ class LevelOne extends React.Component {
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
-    
-
   }
-
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = this.state.player.shields/10;
@@ -163,34 +156,31 @@ class LevelOne extends React.Component {
     render() {
         
         return (
-
-                 
-                <Container
-                style={{width:"2000", position:"absolute", zIndex:-10}}
-                     >
-                  <Row >
-                      <Col size="md-3">
-                          <DuncanIdaho 
-                           isAttacking={this.state.isAttacking}
-                         />
-                      </Col>
-                      <Col size="md-6"  style={{marginLeft:30, }}>
-                        
-                        <SardaukarGrunt
-                        className="sardaukarGrunt"
-                        style={{float:"right", position:"fixed", zIndex:-10}}
-                        />
-                      </Col>
-                      <Col size="md-3">
-                      <Animated animationIn="zoomInLeft" animationOut="fadeOut" isVisible={true}>
-                        <div>
-                        <SardaukarElite/></div></Animated>
-                      </Col>
-                    </Row>
+         <Container
+            style={{width:"2000", position:"absolute", zIndex:-10}}
+                  >
+              <Row >
+                  <Col size="md-3">
+                      <DuncanIdaho 
+                        isAttacking={this.state.isAttacking}
+                      />
+                  </Col>
+                  <Col size="md-6"  style={{marginLeft:30, }}>              
+                    <SardaukarGrunt
+                    className="sardaukarGrunt"
+                    style={{float:"right", position:"fixed", zIndex:-10}}
+                    />
+                  </Col>
+                  <Col size="md-3">
+                  <Animated animationIn="zoomInLeft" animationOut="fadeOut" isVisible={true}>
+                    <div>
+                    <SardaukarElite/></div></Animated>
+                  </Col>
+                </Row>
                     
                 
                     
-                </Container>
+        </Container>
                 
          
         )
@@ -198,3 +188,6 @@ class LevelOne extends React.Component {
 }
 
 export default LevelOne;
+
+
+

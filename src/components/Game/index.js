@@ -5,15 +5,73 @@ import {Animated} from "react-animated-css";
 import BattleMenu from "../BattleMenu";
 import { Container, Row, Col } from "../Grid";
 import LevelOne from "../../LevelOne";
-
 import { relative } from "path";
 import DuncanIdaho from "../DuncanIdaho";
 import SardaukarElite from "../SardaukarElite";
 import SardaukarGrunt from "../SardaukarGrunt";
 import Story from "../Story";
 
+import ReactDOM from "react-dom";
+import {Route, Link, BrowserRouter as Router} from "react-router-dom";
+// import App from "./App";
+// import Store from "./Store";
+// import LevelOneOne from "./LevelOne";
+// import LevelOneTwo from "./LevelTwo";
+// import Game2 from "../../Game2";
+// import LevelOneThree from "../../LevelThree";
+// import Game3 from "../../Game3";
+// import Game4 from "../../Game4";
+// import Game5 from "../../Game5";
+// import LevelFour from "./LevelFour";
+import Game6 from "../../Game6";
+// import MenuCurtain from "./components/MenuCurtain";
+// import {Picture} from "./img/background_battleScreen.jpg"
+// import ThankYou from "./ThankYou";
+
+
 
 class Game extends Component{
+   
+      
+//   routing = (
+//   <Router
+//   style={{
+//       position:"absolute",
+//       zIndex:-1,
+//       // maxHeight:"50%"
+
+//       }}
+//   >
+//       <div 
+//       style={{maxHeight:"900px",
+//       zIndex:1,
+
+//           }}
+//       >
+//       <MenuCurtain
+//       style={{
+//       position:"relative",
+//       zIndex:20
+//       }}
+//       />  
+//           <Route exact path="/" component={App} />
+//           <Route exact path="/store" component={Store}/>
+//           <Route exact path="/leveloneone" component={LevelOneOne}/>
+//           <Route exact path="/game" component={Game} />
+//           <Route exact path="/levelonetwo" component={LevelOneTwo}/>
+//           <Route exact path="/game2" component={Game2}/>
+//           <Route exact path="/levelonethree" component={LevelOneThree}/>
+//           <Route exact path="/game3" component={Game3}/>
+//           <Route exact path="/game4" component={Game4}/>
+//           <Route exact path="/game5" component={Game5}/>
+//           <Route exact path="/levelonefour" component={LevelFour}/>
+//           <Route exact path="/game6" component={Game6}/>
+//           <Route exact path="/thankyou" component={ThankYou}/>
+
+//       </div>
+//   </Router >
+// )
+
 
 
     constructor() {
@@ -34,9 +92,6 @@ class Game extends Component{
         DuncanHeadShowing:true,
         battleBackgroundShowing:true,
 
-
-
-        
         // headMasterEntering:false,
         // duncanIdahoEntering:false,
         // beastEntering:false,
@@ -44,8 +99,7 @@ class Game extends Component{
         // eliteEntering:false,
         // assassinEntering:false,
         // userAvatarEntering:false,
-        
-   
+
         // battleMenuShowing:true,
         // blueBackgroundShowing:false,
         // redBackgroundShowing:false,
@@ -75,27 +129,7 @@ class Game extends Component{
         // arrowButtonsHidden:false,
 
       }
-        //----HAVENT TRIED THIS YET!- JR3 from Ex2.............
-  const logMessage = message => {
-    message = message || "Hello World!";
-    console.log(message);
-  };
-  
-  logMessage();
-  
-  // 2. Update the code below to set `message` using a ternary expression (variable = conditional ? value : otherValue)
-  
-  const logTired = beenWorkingAllDay => {
-    const message = beenWorkingAllDay ? "I'm feeling really tired" : "I'm wide awake!";
-    console.log(message);
-  };
-  
-  logTired(true);
-   //----HAVENT TRIED THIS YET!- JR3 ^^^^
-
-
-
-
+   
       };
     
       normalAttack = () => {
@@ -212,12 +246,21 @@ class Game extends Component{
               <Row className="FightScreen" 
                 style={{width: "100%", minheight:"75%", zIndex:1, position:"relative"}}
                 >
-                  <LevelOne
+
+                  {/* <LevelOne
                       // battleBackgroundShowing={this.state.battleBackgroundShowing}
-                      />
+                      /> */}
                   {/* <Story
                     DuncanHeadShowing={this.DuncanHeadShowing}/>
                */}
+               {/* <Game2/> */}
+              {/* <LevelOneThree/> */}
+                {/* <Game3/> */}
+                {/* <Game4/> */}
+                {/* <Game5/> */}
+                {/*<LevelFour/>*/}
+                <Game6/> 
+
                 </Row>
                 <Row style={{width:"100%"}}>
               
@@ -244,6 +287,6 @@ class Game extends Component{
         );
       }
     }
-    
+    // ReactDOM.render(routing, document.getElementById("root"));
     export default Game;
     

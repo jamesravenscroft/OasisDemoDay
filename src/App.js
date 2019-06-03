@@ -2,7 +2,7 @@ import React from 'react';
 import MenuSelections from "./components/MenuSelections";
 import Title from "./components/Title";
 import './App.css';
-
+import {Animated} from "react-animated-css";
 
 
 function App() {
