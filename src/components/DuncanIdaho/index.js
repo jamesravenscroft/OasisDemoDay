@@ -20,9 +20,9 @@ function DuncanIdaho (props) {
                 className={props.isPulsing ? "pulsing" : "notPulsing"        
         } /></div> */}
 
-            <img src={Picture} alt="Duncan Idaho" height="80%" style={{
-                marginLeft:"-10%",
-           marginTop:"5%", position:"fixed", zIndex:-1}} 
+            <img src={Picture} alt="Duncan Idaho" height="550" 
+            style={{marginLeft:"-10%", marginTop:"5%", 
+            position:"relative", zIndex:-1}} 
             className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
         </div>
     );

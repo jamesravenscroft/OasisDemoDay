@@ -23,7 +23,11 @@ class Game4 extends Component {
       isAttacking: false,
       isShowing: false,
       message: "",
-      link: ""
+      link: "",
+    
+      Level: {
+        level:4
+      },
     }
   }
 

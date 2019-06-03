@@ -26,10 +26,10 @@ class Game6 extends Component {
       isShowing: false,
       message: "",
       link: "",
- 
+
+      level:6,
     
     fireExploding:true,
-
   }
   };
 
@@ -91,7 +91,6 @@ class Game6 extends Component {
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();  
-
   }
 
   enemyPulseAttack = () => {
@@ -127,18 +126,17 @@ class Game6 extends Component {
       this.setState({isShowing: true});
       this.setState({message: newMessage});
       this.setState({link: "/thankyou"});
-    }
-  };
+        }
+     };
 
   render() {
     return (
-      <div className="GameContainer" style={{
+      <div className="GameContainer" 
+        style={{
         position:"fixed",
         zIndex:-1, marginTop:"1%",
-        width:"100%"
-       
-    
-      }}>
+        width:"100%" 
+       }}>
           
        
         <Container
@@ -146,27 +144,40 @@ class Game6 extends Component {
           // position:"absolute",
           // zIndex:1,
           // height:"100"
-        }}
-        >
+          }}
+          >
+            <img src={require("./Assets/rain.gif")} alt="rain" width="100%"
+             style={{zIndex:30, position:"fixed"}}   
+              />
        
       
           <Row className>
-              <Col size="md-3"><DuncanIdaho/>
-              {/* <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
-    <div> 
-                <DemoPlayer
+              <Col size="md-3">
+              <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
+                <div> <DuncanIdaho
+    
+                  isAttacking={this.state.isAttacking}/>
+                {/* <DemoPlayer
                 isAttacking={this.state.isAttacking}
-                />
+                /> */}
                   </div>
-</Animated> */}
+</Animated>
               </Col>
               <Col size="md-9">
+              <Animated animationIn="fadeInRightBig" animationOut="bounce" animationInDuration={10000} animationOutDuration={3000} isVisible={true}>
+                <div>
+               
                 <BeastHarkonnen
-                fireExploding={this.state.fireExploding}
-                style={{position:"relative", zIndex:1,
-                padding:0
-              }} 
-                />  
+                        fireExploding={this.state.fireExploding}
+                        style={{position:"relative", zIndex:1, 
+                        // marginLeft:"100%", 
+                        float:"right",
+                        padding:0
+                        }} 
+                  />    
+                  </div></Animated>
+
+
                   {/* <Modal
                 className="modal"
                 show={this.state.isShowing}

@@ -33,6 +33,8 @@ function BattleMenu(props)  {
                 <div className="col-sm-3">
                     <ul className="playerStats" style={{fontSize:35, color:"lime", backgroundColor:"grey", borderRadius:20}}>
                     <li>Shields: {props.playerShields}</li>
+                   
+                    <li>Level: {props.level}</li>
                     {/* <li>Attack: {props.playerAttack}</li> */}
                     </ul>
                 </div>
@@ -60,6 +62,7 @@ function BattleMenu(props)  {
                 <div className="col-sm-3">
                     <ul className="enemyStats" style={{fontSize:35, color:"lime", backgroundColor:"grey", borderRadius:20, float:"right"}}>
                         <li>Sheilds: {props.enemyShields}</li> 
+                       
                         {/* <li>Attack:{props.enemyAttack}</li> */}
                     </ul><MusicPlayer
                             src={Song}  

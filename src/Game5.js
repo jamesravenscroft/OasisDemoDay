@@ -23,7 +23,11 @@ class Game5 extends Component {
       isAttacking: false,
       isShowing: false,
       message: "",
-      link: ""
+      link: "",
+    
+      Level: {
+        level:5
+      },
     }
   };
 
