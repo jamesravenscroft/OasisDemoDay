@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Route, Link, BrowserRouter as Router} from "react-router-dom";
 import App from "./App";
 import LevelOne from "./LevelOne";
-
+import {Animated} from "react-animated-css";
 import registerServiceWorker from "./registerServiceWorker";
 import Game from "./components/Game";
 
