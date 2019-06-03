@@ -24,6 +24,12 @@ class LevelOne extends React.Component {
       // isShowing: false,
       // message: "",
       // link: "",  
+
+    
+    
+    Level: {
+      level:1
+    },
     
     fireExploding:true,
     DuncanHeadShowing:true,

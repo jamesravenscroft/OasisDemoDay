@@ -270,7 +270,8 @@ class Game extends Component{
                     playerShields = {this.state.player.shields}
                     normalAttack = {this.normalAttack}
                     pulseAttack = {this.pulseAttack}
-                    enemyShields = {this.state.enemy.shields}   
+                    enemyShields = {this.state.enemy.shields} 
+                    level={this.state.level}  
                       style={{
                         marginTop:"100%",
                        position:"fixed", zIndex:50,
