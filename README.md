@@ -1,3 +1,10 @@
+**In Progress**
+SwordMasters of Ginaz Demo Version with improved routing and BattleMenu layout.
+
+**Below is a template for this read me**
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
